@@ -1,0 +1,64 @@
+{
+  "name": "siberfx/cloudflare-turnstile",
+  "description": "Cloudflare Turnstile CAPTCHA integration for Laravel: Blade widget, validation rule, middleware and testing fake.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["laravel", "cloudflare", "turnstile", "captcha", "validation", "bot-protection", "blade"],
+  "authors": [
+    {
+      "name": "Selim Görmüş",
+      "email": "info@siberfx.com",
+      "role": "Software Engineer"
+    }
+  ],
+  "require": {
+    "php": "~8.4.0|~8.5.0",
+    "illuminate/console": "^12.0|^13.0",
+    "illuminate/contracts": "^12.0|^13.0",
+    "illuminate/http": "^12.0|^13.0",
+    "illuminate/support": "^12.0|^13.0",
+    "illuminate/validation": "^12.0|^13.0",
+    "illuminate/view": "^12.0|^13.0"
+  },
+  "require-dev": {
+    "guzzlehttp/guzzle": "^7.9",
+    "larastan/larastan": "^3.0",
+    "laravel/pint": "^1.20",
+    "orchestra/testbench": "^10.0|^11.0",
+    "pestphp/pest": "^4.0",
+    "pestphp/pest-plugin-laravel": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Siberfx\\Turnstile\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Siberfx\\Turnstile\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "pest",
+    "analyse": "phpstan analyse --memory-limit=1G",
+    "format": "pint"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Siberfx\\Turnstile\\TurnstileServiceProvider"
+      ],
+      "aliases": {
+        "Turnstile": "Siberfx\\Turnstile\\Facades\\Turnstile"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
